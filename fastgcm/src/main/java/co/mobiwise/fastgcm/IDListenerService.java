@@ -16,6 +16,6 @@ public class IDListenerService extends InstanceIDListenerService{
      */
     @Override
     public void onTokenRefresh() {
-        startService(new Intent(this, RegistrationService.class));
+        startForegroundService(new Intent(this, RegistrationService.class));
     }
 }
