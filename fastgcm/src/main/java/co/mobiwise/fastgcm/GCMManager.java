@@ -67,7 +67,7 @@ public class GCMManager implements IGCMManager{
 
         int mStatus = GooglePlayServicesUtil.isGooglePlayServicesAvailable(mContext);
         if(mStatus == ConnectionResult.SUCCESS)
-            mContext.startService(new Intent(mContext, RegistrationService.class));
+            mContext.startForegroundService(new Intent(mContext, RegistrationService.class));
         else{
             if(mGcmListener != null)
                 mGcmListener.onPlayServiceError();
